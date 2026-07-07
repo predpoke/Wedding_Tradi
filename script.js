@@ -133,4 +133,5 @@ setConfigFields();
 renderCalendar();
 renderGallery();
 setupMap();
+setupShare();
 setupReveals();

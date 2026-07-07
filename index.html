@@ -14,9 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260620-2" />
-  <script src="config.js?v=20260620-2"></script>
-  <script src="script.js?v=20260620-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260707-1" />
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js"></script>
+  <script src="config.js?v=20260707-1"></script>
+  <script src="script.js?v=20260707-1" defer></script>
 </head>
 <body>
   <main class="invitation-shell">
@@ -60,7 +61,7 @@
       <h2 id="location-title">오시는 길</h2>
       <div class="venue-heading">
         <strong><span data-field="venueName">트라디노이</span></strong>
-        <span data-field="venueAddress">자세한 주소는 네이버 지도에서 확인해 주세요</span>
+        <span data-field="venueAddress">서울특별시 강남구 도곡로99길 16, 6층</span>
       </div>
       <div class="map-frame">
         <iframe id="map-iframe" title="트라디노이 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -71,9 +72,19 @@
         <a id="tmap" target="_blank" rel="noopener">티맵</a>
       </div>
       <div class="transport-list">
-        <article><span class="transport-icon">▣</span><div><h3>지하철</h3><p data-field="subway">2호선 삼성역 하차 후 도보 이동</p></div></article>
-        <article><span class="transport-icon">▤</span><div><h3>버스</h3><p data-field="bus">포스코사거리 인근 정류장 하차</p></div></article>
-        <article><span class="transport-icon">P</span><div><h3>주차 안내</h3><p data-field="parking">주차 안내는 확인 후 업데이트 예정입니다</p></div></article>
+        <article><span class="transport-icon">▣</span><div><h3>지하철</h3><p data-field="subway">2호선 삼성역 3번 출구에서 도보 약 10분</p></div></article>
+        <article><span class="transport-icon">▤</span><div><h3>버스</h3><p data-field="bus">삼성역·휘문고교 인근 정류장 이용</p></div></article>
+      </div>
+    </section>
+
+    <section class="section share reveal" aria-labelledby="share-title">
+      <div class="botanical">❧</div>
+      <h2 id="share-title">초대장 공유하기</h2>
+      <p>소중한 분께 이 초대장을 전해주세요.</p>
+      <div class="share-actions">
+        <button id="share-kakao" class="kakao-share" type="button">카카오톡 공유</button>
+        <button id="copy-url" type="button">링크 복사</button>
+        <button id="share-native" type="button">공유하기</button>
       </div>
     </section>
 
