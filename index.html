@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f4ec" />
+  <title>승호 그리고 샘, 결혼합니다</title>
+  <meta name="description" content="2026년 10월 16일 금요일 오후 5시, 트라디노이" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="최승호 · 이샘 결혼합니다" />
+  <meta property="og:description" content="2026.10.16 FRI 5:00 PM · 트라디노이" />
+  <meta property="og:image" content="assets/sam_0102.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260620-2" />
+  <script src="config.js?v=20260620-2"></script>
+  <script src="script.js?v=20260620-2" defer></script>
+</head>
+<body>
+  <main class="invitation-shell">
+    <section class="hero" aria-labelledby="couple-names">
+      <img id="hero-image" class="hero__image" src="assets/sam_0102.jpg" alt="최승호 이샘 커플 사진" />
+      <div class="hero__fade"></div>
+      <div class="hero__content reveal">
+        <p class="hero__date-en" data-field="dateEnglish">OCTOBER 16, 2026</p>
+        <h1 id="couple-names"><span data-field="groomName">최승호</span><i></i><span data-field="brideName">이샘</span></h1>
+        <p class="hero__meta"><span data-field="dateText">2026년 10월 16일 금요일 오후 5시</span><br /><span data-field="venueName">트라디노이</span></p>
+      </div>
+    </section>
+
+    <section class="section intro reveal" aria-labelledby="intro-title">
+      <div class="botanical">❧</div>
+      <h2 id="intro-title">소중한 분들을 초대합니다</h2>
+      <p class="invitation-copy" data-field="invitationMessage">서로의 이름을 부르던 두 사람이<br />이제 하나의 이름으로 함께하고자 합니다.<br /><br />저희의 새로운 시작에 따뜻한 축복으로<br />함께해 주시면 더없는 기쁨이 되겠습니다.</p>
+      <div class="families">
+        <p><span data-field="groomFather">최태성</span> · <span data-field="groomMother">조양춘</span><small>의 아들</small><strong data-field="groomShortName">승호</strong></p>
+        <span class="families__line"></span>
+        <p><span data-field="brideFather">이병철</span> · <span data-field="brideMother">변희숙</span><small>의 딸</small><strong data-field="brideShortName">샘</strong></p>
+      </div>
+    </section>
+
+    <section class="section gallery-section reveal" aria-labelledby="gallery-title">
+      <p class="section-number">OUR MOMENTS</p>
+      <h2 id="gallery-title">우리의 순간들</h2>
+      <div id="gallery" class="gallery" aria-label="커플 사진 갤러리"></div>
+      <button id="gallery-more" class="outline-button" type="button">사진 더보기 <span aria-hidden="true">＋</span></button>
+    </section>
+
+    <section class="section schedule reveal" aria-labelledby="schedule-title">
+      <p class="section-number">WEDDING DAY</p>
+      <h2 id="schedule-title">2026년 10월</h2>
+      <div id="calendar" class="calendar" aria-label="2026년 10월 달력"></div>
+      <p class="countdown">결혼식까지 <strong id="d-day">D-DAY</strong></p>
+    </section>
+
+    <section class="section location reveal" aria-labelledby="location-title">
+      <p class="section-number">LOCATION</p>
+      <h2 id="location-title">오시는 길</h2>
+      <div class="venue-heading">
+        <strong><span data-field="venueName">트라디노이</span></strong>
+        <span data-field="venueAddress">자세한 주소는 네이버 지도에서 확인해 주세요</span>
+      </div>
+      <div class="map-frame">
+        <iframe id="map-iframe" title="트라디노이 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="map-actions">
+        <a id="kakao-map" target="_blank" rel="noopener">카카오맵</a>
+        <a id="naver-map" target="_blank" rel="noopener">네이버지도</a>
+        <a id="tmap" target="_blank" rel="noopener">티맵</a>
+      </div>
+      <div class="transport-list">
+        <article><span class="transport-icon">▣</span><div><h3>지하철</h3><p data-field="subway">2호선 삼성역 하차 후 도보 이동</p></div></article>
+        <article><span class="transport-icon">▤</span><div><h3>버스</h3><p data-field="bus">포스코사거리 인근 정류장 하차</p></div></article>
+        <article><span class="transport-icon">P</span><div><h3>주차 안내</h3><p data-field="parking">주차 안내는 확인 후 업데이트 예정입니다</p></div></article>
+      </div>
+    </section>
+
+    <footer>
+      <p><span data-field="groomShortName">승호</span> <i>and</i> <span data-field="brideShortName">샘</span></p>
+      <small>2026. 10. 16</small>
+    </footer>
+  </main>
+
+  <dialog id="photo-modal" class="photo-modal">
+    <button id="modal-close" aria-label="사진 닫기">×</button>
+    <img id="modal-image" alt="확대된 커플 사진" />
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
