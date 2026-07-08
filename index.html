@@ -14,22 +14,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260708-5" />
+  <link rel="stylesheet" href="styles.css?v=20260708-6" />
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js"></script>
-  <script src="config.js?v=20260708-5"></script>
-  <script src="script.js?v=20260708-5" defer></script>
+  <script src="config.js?v=20260708-6"></script>
+  <script src="script.js?v=20260708-6" defer></script>
 </head>
 <body>
   <main class="invitation-shell">
     <section class="hero" aria-labelledby="couple-names">
       <img id="hero-image" class="hero__image" src="assets/sam_0102.jpg" alt="최승호 이샘 커플 사진" />
       <div class="hero__shade"></div>
-      <div class="hero__content reveal">
+      <div class="hero__title">
         <p class="hero__script" aria-label="We're getting Married!">
           <span class="hero__word hero__word--one">We're</span>
           <span class="hero__word hero__word--two">getting</span>
           <span class="hero__word hero__word--three">Married!</span>
         </p>
+      </div>
+      <div class="hero__details">
         <p class="hero__date-en" data-field="dateEnglish">OCTOBER 16, 2026</p>
         <h1 id="couple-names"><span data-field="groomName">최승호</span><i>&amp;</i><span data-field="brideName">이샘</span></h1>
         <p class="hero__meta"><span data-field="sessionText">1부 오후 5시 · 2부 오후 7시</span><br /><span data-field="venueName">트라디노이</span></p>
@@ -44,9 +46,9 @@
       <button id="gallery-more" class="outline-button" type="button">사진 더보기</button>
     </section>
 
-    <section id="invitation" class="section intro reveal" aria-labelledby="intro-title">
-      <h2 id="intro-title">저희 결혼합니다</h2>
-      <p class="invitation-copy" data-field="invitationMessage">두 사람이 한 사람보다 나음은 그들이 수고함으로 좋은 상을 얻을 것임이라.</p>
+    <section id="invitation" class="section intro reveal" aria-labelledby="scripture-title">
+      <h2 id="scripture-title" class="scripture-title" data-field="scriptureMessage">“두 사람이 한 사람보다 나음은<br />그들이 수고함으로 좋은 상을 얻을 것임이라.”<small>— 전도서 4장 9절</small></h2>
+      <p class="invitation-copy" data-field="invitationMessage">혼자서도 충분했습니다.</p>
       <div class="families">
         <p><span data-field="groomFather">최태성</span> · <span data-field="groomMother">조양춘</span><small>장남</small><strong data-field="groomShortName">승호</strong></p>
         <span class="families__line"></span>
