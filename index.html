@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f8f4ec" />
   <title>승호 그리고 샘, 결혼합니다</title>
-  <meta name="description" content="2026년 10월 16일 금요일 오후 5시, 트라디노이" />
+  <meta name="description" content="2026년 10월 16일 금요일, 1부 오후 5시 · 2부 오후 7시, 트라디노이" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="최승호 · 이샘 결혼합니다" />
-  <meta property="og:description" content="2026.10.16 FRI 5:00 PM · 트라디노이" />
+  <meta property="og:description" content="2026.10.16 FRI · 1부 5:00 PM · 2부 7:00 PM · 트라디노이" />
   <meta property="og:image" content="assets/sam_0102.jpg" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260708-1" />
+  <link rel="stylesheet" href="styles.css?v=20260708-2" />
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js"></script>
-  <script src="config.js?v=20260708-1"></script>
-  <script src="script.js?v=20260708-1" defer></script>
+  <script src="config.js?v=20260708-2"></script>
+  <script src="script.js?v=20260708-2" defer></script>
 </head>
 <body>
   <main class="invitation-shell">
@@ -27,14 +27,14 @@
       <div class="hero__content reveal">
         <p class="hero__date-en" data-field="dateEnglish">OCTOBER 16, 2026</p>
         <h1 id="couple-names"><span data-field="groomName">최승호</span><i></i><span data-field="brideName">이샘</span></h1>
-        <p class="hero__meta"><span data-field="dateText">2026년 10월 16일 금요일 오후 5시</span><br /><span data-field="venueName">트라디노이</span></p>
+        <p class="hero__meta"><span data-field="dateText">2026년 10월 16일 금요일</span><br /><span data-field="sessionText">1부 오후 5시 · 2부 오후 7시</span><br /><span data-field="venueName">트라디노이</span></p>
       </div>
     </section>
 
     <section class="section intro reveal" aria-labelledby="intro-title">
       <div class="botanical">❧</div>
       <h2 id="intro-title">소중한 분들을 초대합니다</h2>
-      <p class="invitation-copy" data-field="invitationMessage">서로의 이름을 부르던 두 사람이<br />이제 하나의 이름으로 함께하고자 합니다.<br /><br />저희의 새로운 시작에 따뜻한 축복으로<br />함께해 주시면 더없는 기쁨이 되겠습니다.</p>
+      <p class="invitation-copy" data-field="invitationMessage">두 사람이 한 사람보다 나음은 그들이 수고함으로 좋은 상을 얻을 것임이라.</p>
       <div class="families">
         <p><span data-field="groomFather">최태성</span> · <span data-field="groomMother">조양춘</span><small>의 아들</small><strong data-field="groomShortName">승호</strong></p>
         <span class="families__line"></span>
@@ -54,6 +54,14 @@
       <h2 id="schedule-title">2026년 10월</h2>
       <div id="calendar" class="calendar" aria-label="2026년 10월 달력"></div>
       <p class="countdown">결혼식까지 <strong id="d-day">D-DAY</strong></p>
+      <div class="session-cards" aria-label="예식 시간">
+        <div><small>1부</small><strong>오후 5시</strong></div>
+        <div><small>2부</small><strong>오후 7시</strong></div>
+      </div>
+      <div class="wedding-notices">
+        <p>식사는 1부 예식이 끝난 후<br>동일 공간에서 뷔페식으로 시작됩니다.</p>
+        <p>화환 설치가 불가한 식장이라<br>소중한 마음만 받겠습니다.</p>
+      </div>
     </section>
 
     <section class="section location reveal" aria-labelledby="location-title">
@@ -61,19 +69,25 @@
       <h2 id="location-title">오시는 길</h2>
       <div class="venue-heading">
         <strong><span data-field="venueName">트라디노이</span></strong>
-        <span data-field="venueAddress">서울특별시 강남구 도곡로99길 16, 6층</span>
+        <span data-field="venueAddress">서울 강남구 도곡로99길 16, 6층</span>
+        <span data-field="venueAddressJibun">(구주소: 서울 강남구 대치동 984)</span>
       </div>
+      <figure class="route-map">
+        <img src="assets/tradinoy-map.png" alt="삼성역 3번 출구에서 트라디노이까지 오는 길 약도" loading="lazy" />
+        <figcaption>트라디노이 오시는 길 약도</figcaption>
+      </figure>
       <div class="map-frame">
         <iframe id="map-iframe" title="트라디노이 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="map-actions">
         <a id="kakao-map" target="_blank" rel="noopener">카카오맵</a>
         <a id="naver-map" target="_blank" rel="noopener">네이버지도</a>
-        <a id="tmap" target="_blank" rel="noopener">티맵</a>
+        <a id="tmap" href="#">티맵 앱</a>
       </div>
       <div class="transport-list">
         <article><span class="transport-icon">▣</span><div><h3>지하철</h3><p data-field="subway">2호선 삼성역 3번 출구에서 도보 약 15분</p></div></article>
         <article><span class="transport-icon">▤</span><div><h3>버스</h3><p data-field="bus">휘문고·대치2동주민센터 정류장 하차</p></div></article>
+        <article><span class="transport-icon">P</span><div><h3>주차</h3><p data-field="parking">건물 주차장 또는 안내주차장 이용</p></div></article>
       </div>
     </section>
 
@@ -82,6 +96,15 @@
       <h2 id="accounts-title">마음 전하실 곳</h2>
       <p class="section-description">축하의 마음을 전해주실 분들을 위해 안내드립니다.</p>
       <div id="account-groups"></div>
+    </section>
+
+    <section class="section qr-section reveal" aria-labelledby="qr-title">
+      <p class="section-number">QR CODE</p>
+      <h2 id="qr-title">모바일 청첩장</h2>
+      <p>카메라로 QR 코드를 스캔하면<br>이 청첩장으로 바로 연결됩니다.</p>
+      <a class="qr-link" href="assets/invitation-qr.png" download="최승호-이샘-모바일청첩장-QR.png">
+        <img src="assets/invitation-qr.png" alt="최승호 이샘 모바일 청첩장 QR 코드" />
+      </a>
     </section>
 
     <section class="section share reveal" aria-labelledby="share-title">

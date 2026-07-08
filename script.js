@@ -73,7 +73,19 @@ const setupMap = () => {
   document.getElementById("map-iframe").src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon-delta}%2C${lat-delta}%2C${lon+delta}%2C${lat+delta}&layer=mapnik&marker=${lat}%2C${lon}`;
   document.getElementById("kakao-map").href = config.kakaoMapUrl || `https://map.kakao.com/?q=${encodeURIComponent(venueName)}`;
   document.getElementById("naver-map").href = config.naverMapUrl || `https://map.naver.com/v5/search/${encodeURIComponent(venueAddress)}`;
-  document.getElementById("tmap").href = `tmap://route?rGoName=${encodeURIComponent(venueName)}&rGoX=${lon}&rGoY=${lat}`;
+  const tmap = document.getElementById("tmap");
+  const destination = `rGoName=${encodeURIComponent(venueName)}&rGoX=${lon}&rGoY=${lat}`;
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  tmap.href = isAndroid
+    ? `intent://?${destination}#Intent;scheme=tmap;package=com.skt.tmap.ku;S.browser_fallback_url=https%3A%2F%2Fwww.tmapmobility.com%2F;end`
+    : `tmap://?${destination}`;
+  tmap.addEventListener("click", (event) => {
+    if (!isMobile) {
+      event.preventDefault();
+      showToast("티맵 길찾기는 휴대폰에서 이용해 주세요.");
+    }
+  });
 };
 
 const showToast = (message) => {
