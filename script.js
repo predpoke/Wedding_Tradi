@@ -141,6 +141,53 @@ const setupReveals = () => {
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 };
 
+const setupRsvp = () => {
+  const modal = document.getElementById("rsvp-modal");
+  const form = document.getElementById("rsvp-form");
+  document.getElementById("rsvp-open").addEventListener("click", () => modal.showModal());
+  document.getElementById("rsvp-close").addEventListener("click", () => modal.close());
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const response = [`[최승호 · 이샘 결혼식 참석 여부]`, `성함: ${data.get("guestName")}`, `구분: ${data.get("side")}`, `참석 여부: ${data.get("attendance")}`, `참석 인원: ${data.get("guests")}`, `예식: ${data.get("session")}`, data.get("note") ? `전하실 말씀: ${data.get("note")}` : ""].filter(Boolean).join("\n");
+    modal.close();
+    await copyText(response, "참석 응답을 복사했습니다. 신랑·신부에게 전달해 주세요.");
+    if (navigator.share) {
+      await navigator.share({ title: "결혼식 참석 여부", text: response }).catch(() => {});
+    }
+  });
+};
+
+const setupGuestbook = () => {
+  const key = "wedding-tradi-guestbook";
+  const form = document.getElementById("guestbook-form");
+  const list = document.getElementById("guestbook-list");
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[character]);
+  const loadEntries = () => {
+    try { return JSON.parse(localStorage.getItem(key)) || []; }
+    catch { return []; }
+  };
+  const renderEntries = () => {
+    const entries = loadEntries();
+    list.innerHTML = entries.length
+      ? entries.map((entry) => `<li><strong>${escapeHtml(entry.name)}</strong><time>${escapeHtml(entry.date)}</time><p>${escapeHtml(entry.message)}</p></li>`).join("")
+      : `<li class="guestbook-empty">첫 번째 축하 메시지를 남겨주세요.</li>`;
+  };
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = document.getElementById("guestbook-name").value.trim();
+    const message = document.getElementById("guestbook-message").value.trim();
+    if (!name || !message) return;
+    const entries = loadEntries();
+    entries.unshift({ name, message, date: new Intl.DateTimeFormat("ko-KR", { dateStyle: "short", timeStyle: "short" }).format(new Date()) });
+    localStorage.setItem(key, JSON.stringify(entries.slice(0, 30)));
+    form.reset();
+    renderEntries();
+    showToast("축하 메시지를 저장했습니다.");
+  });
+  renderEntries();
+};
+
 setConfigFields();
 renderCalendar();
 renderGallery();
@@ -148,4 +195,6 @@ renderAccounts();
 setupMap();
 setupShare();
 setupReveals();
+setupRsvp();
+setupGuestbook();
 document.getElementById("to-top").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
