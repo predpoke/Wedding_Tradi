@@ -71,9 +71,9 @@ const setupMap = () => {
   const { latitude: lat, longitude: lon, venueName, venueAddress } = config;
   const delta = 0.006;
   document.getElementById("map-iframe").src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon-delta}%2C${lat-delta}%2C${lon+delta}%2C${lat+delta}&layer=mapnik&marker=${lat}%2C${lon}`;
-  document.getElementById("kakao-map").href = `https://map.kakao.com/link/to/${encodeURIComponent(venueName)},${lat},${lon}`;
+  document.getElementById("kakao-map").href = config.kakaoMapUrl || `https://map.kakao.com/?q=${encodeURIComponent(venueName)}`;
   document.getElementById("naver-map").href = config.naverMapUrl || `https://map.naver.com/v5/search/${encodeURIComponent(venueAddress)}`;
-  document.getElementById("tmap").href = `https://www.tmap.co.kr/tmap2/mobile/route.jsp?name=${encodeURIComponent(venueName)}&lon=${lon}&lat=${lat}`;
+  document.getElementById("tmap").href = `tmap://route?rGoName=${encodeURIComponent(venueName)}&rGoX=${lon}&rGoY=${lat}`;
 };
 
 const showToast = (message) => {
@@ -132,6 +132,7 @@ const setupReveals = () => {
 setConfigFields();
 renderCalendar();
 renderGallery();
+renderAccounts();
 setupMap();
 setupShare();
 setupReveals();

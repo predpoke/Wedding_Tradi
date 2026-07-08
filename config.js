@@ -19,6 +19,7 @@ window.WEDDING_CONFIG = {
   latitude: 37.5018468,
   longitude: 127.0660350,
   naverMapUrl: "https://map.naver.com/p/entry/place/1297636555?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5&searchType=place&lng=127.0660350&lat=37.5018468&c=15.00,0,0,0,dh",
+  kakaoMapUrl: "https://map.kakao.com/?q=%ED%8A%B8%EB%9D%BC%EB%94%94%EB%85%B8%EC%9D%B4",
   invitationMessage: "서로의 이름을 부르던 두 사람이<br>이제 하나의 이름으로 함께하고자 합니다.<br><br>저희의 새로운 시작에 따뜻한 축복으로<br>함께해 주시면 더없는 기쁨이 되겠습니다.",
   subway: "2호선 삼성역 3번 출구에서 도보 약 15분<br>3호선 학여울역에서도 도보 약 12~13분",
   bus: "휘문고·대치2동주민센터 정류장 하차<br>마을버스 강남01·강남06 / 버스 401·4318·4419",
@@ -29,5 +30,13 @@ window.WEDDING_CONFIG = {
     { src: "assets/sam_0904.jpg", position: "50% 48%" },
     { src: "assets/sam_0862.jpg", position: "50% 46%" },
     { src: "assets/sam_0793.jpg", position: "50% 45%" }
+  ],
+  accounts: [
+    {
+      label: "신랑측 계좌번호",
+      people: [
+        { relation: "신랑", name: "최승호", bank: "국민은행", number: "549802-01-581685" }
+      ]
+    }
   ]
 };
