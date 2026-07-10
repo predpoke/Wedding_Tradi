@@ -46,13 +46,17 @@ window.WEDDING_CONFIG = {
     {
       label: "신랑측 계좌번호",
       people: [
-        { relation: "신랑", name: "최승호", bank: "국민은행", number: "549802-01-581685" }
+        { relation: "신랑", name: "최승호", bank: "국민은행", number: "549802-01-581685" },
+        { relation: "아버지", name: "최태성", bank: "우리은행", number: "1002-747-169264" },
+        { relation: "어머니", name: "조양춘", bank: "우리은행", number: "074-267783-02-001" }
       ]
     },
     {
       label: "신부측 계좌번호",
       people: [
-        { relation: "신부", name: "이샘", bank: "카카오뱅크", number: "3333-11-7969117" }
+        { relation: "신부", name: "이샘", bank: "카카오뱅크", number: "3333-11-7969117" },
+        { relation: "아버지", name: "이병철", bank: "기업은행", number: "054-051250-02-014" },
+        { relation: "어머니", name: "변희숙", bank: "하나은행", number: "418-910444-68107" }
       ]
     }
   ]
