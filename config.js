@@ -21,7 +21,7 @@ window.WEDDING_CONFIG = {
   latitude: 37.5018468,
   longitude: 127.0660350,
   naverMapUrl: "https://map.naver.com/p/entry/place/1297636555?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5&searchType=place&lng=127.0660350&lat=37.5018468&c=15.00,0,0,0,dh",
-  kakaoMapUrl: "https://map.kakao.com/?q=%ED%8A%B8%EB%9D%BC%EB%94%94%EB%85%B8%EC%9D%B4",
+  kakaoMapUrl: "https://map.kakao.com/link/map/%ED%8A%B8%EB%9D%BC%EB%94%94%EB%85%B8%EC%9D%B4,37.5018468,127.0660350",
   scriptureMessage: "“두 사람이 한 사람보다 나음은<br>그들이 수고함으로 좋은 상을 얻을 것임이라.”<small>— 전도서 4장 9절</small>",
   invitationMessage: "혼자서도 충분했습니다.<br><br>그러나 함께라면, 더욱 충만할 겁니다.<br><br>좋은 날도,<br>수고로운 날도,<br>돕는 배필로서 좋은 상을 함께 지어가려 합니다.<br><br>그 충만함의 시작을,<br>여러분과 함께 나누고 싶습니다.",
   subway: "2호선 삼성역 3번 출구에서 도보 약 8분",
