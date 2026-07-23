@@ -141,6 +141,11 @@ h1 i { font-family: var(--display); font-size: 23px; font-style: normal; font-we
 .form-modal fieldset input { width: auto; }
 .form-modal .primary-button { width: 100%; }
 .form-modal__close { position: absolute; top: 13px; right: 15px; border: 0; background: transparent; color: var(--muted); font-size: 34px; cursor: pointer; }
+.music { border-top: 1px solid var(--line); }
+.music .section-description { margin-bottom: 24px; }
+.music-player { overflow: hidden; border: 1px solid var(--line); background: #000; aspect-ratio: 16 / 9; }
+.music-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.music-link { display: inline-block; margin-top: 16px; color: var(--champagne); font-size: 14px; font-weight: 700; text-decoration: none; }
 .share { padding-top: 70px; border-top: 1px solid var(--line); }
 .share > p { color: var(--muted); font-size: 14px; }
 .share-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 28px; }
