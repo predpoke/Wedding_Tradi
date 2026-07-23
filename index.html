@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260723-1" />
+  <link rel="stylesheet" href="styles.css?v=20260723-2" />
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js"></script>
-  <script src="config.js?v=20260714-1"></script>
-  <script src="script.js?v=20260708-7" defer></script>
+  <script src="config.js?v=20260723-2"></script>
+  <script src="script.js?v=20260723-1" defer></script>
 </head>
 <body>
   <main class="invitation-shell">
@@ -133,23 +133,6 @@
       <ul id="guestbook-list" class="guestbook-list" aria-live="polite"></ul>
     </section>
 
-    <section class="section music reveal" aria-labelledby="music-title">
-      <p class="section-number">OUR SONG</p>
-      <h2 id="music-title">함께 듣고 싶은 노래</h2>
-      <p class="section-description">Lady Gaga, Bruno Mars<br />Die With A Smile</p>
-      <div class="music-player">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/kPa7bsKwL-c?rel=0"
-          title="Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video)"
-          loading="lazy"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <a class="music-link" href="https://www.youtube.com/watch?v=kPa7bsKwL-c" target="_blank" rel="noopener">공식 뮤직비디오로 보기</a>
-    </section>
-
     <section class="section share reveal" aria-labelledby="share-title">
       <h2 id="share-title">초대장 공유하기</h2>
       <p>소중한 분께 이 초대장을 전해주세요.</p>
@@ -169,6 +152,10 @@
     <footer><small>2026. 10. 16 · TRADINOI</small></footer>
   </main>
 
+  <div id="bgm-control" class="bgm-control" aria-live="polite">
+    <div id="bgm-player" class="bgm-player" aria-label="배경음악 플레이어"></div>
+    <button id="bgm-toggle" type="button" aria-pressed="false">♪ BGM 켜기</button>
+  </div>
   <button id="to-top" class="to-top" type="button" aria-label="맨 위로 이동">↑</button>
   <dialog id="photo-modal" class="photo-modal">
     <button id="modal-close" aria-label="사진 닫기">×</button>
