@@ -2,6 +2,8 @@ window.WEDDING_CONFIG = {
   kakaoJavascriptKey: "",
   publicUrl: "https://predpoke.github.io/Wedding_Tradi/",
   shareImageUrl: "https://predpoke.github.io/Wedding_Tradi/assets/sam_0102.jpg",
+  bgmVideoId: "kPa7bsKwL-c",
+  bgmStartSeconds: 0,
   groomName: "최승호",
   brideName: "이샘",
   groomShortName: "최승호",

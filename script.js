@@ -136,6 +136,31 @@ const setupShare = () => {
   });
 };
 
+const setupBgm = () => {
+  const player = document.getElementById("bgm-player");
+  const toggle = document.getElementById("bgm-toggle");
+  if (!player || !toggle || !config.bgmVideoId) return;
+
+  const buildSrc = () => {
+    const params = new URLSearchParams({
+      autoplay: "1",
+      playsinline: "1",
+      rel: "0"
+    });
+    if (Number(config.bgmStartSeconds) > 0) params.set("start", String(Number(config.bgmStartSeconds)));
+    return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(config.bgmVideoId)}?${params.toString()}`;
+  };
+
+  toggle.addEventListener("click", () => {
+    const shouldPlay = toggle.getAttribute("aria-pressed") !== "true";
+    toggle.setAttribute("aria-pressed", String(shouldPlay));
+    toggle.textContent = shouldPlay ? "♪ BGM 끄기" : "♪ BGM 켜기";
+    player.innerHTML = shouldPlay
+      ? `<iframe src="${buildSrc()}" title="배경음악" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>`
+      : "";
+  });
+};
+
 const setupReveals = () => {
   const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("visible")), { threshold: 0.1 });
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
@@ -194,6 +219,7 @@ renderGallery();
 renderAccounts();
 setupMap();
 setupShare();
+setupBgm();
 setupReveals();
 setupRsvp();
 setupGuestbook();
