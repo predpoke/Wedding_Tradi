@@ -156,8 +156,8 @@ h1 i { font-family: var(--display); font-size: 23px; font-style: normal; font-we
 footer { padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); text-align: center; }
 footer small { color: var(--muted); font-family: var(--display); font-size: 12px; letter-spacing: .2em; }
 .bgm-control { position: fixed; z-index: 9; left: max(16px,calc((100vw - 430px)/2 + 16px)); bottom: 22px; }
-.bgm-player { position: absolute; left: -9999px; bottom: 0; width: 220px; height: 124px; overflow: hidden; opacity: 0; pointer-events: none; }
-.bgm-player iframe { width: 220px; height: 124px; border: 0; }
+.bgm-player { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.bgm-player audio { width: 1px; height: 1px; }
 .bgm-control button { min-width: 118px; padding: 11px 14px; border: 1px solid rgba(152,124,86,.55); border-radius: 999px; background: rgba(255,255,255,.94); color: var(--champagne); font-family: var(--serif); font-size: 13px; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,.12); cursor: pointer; }
 .bgm-control button[aria-pressed="true"] { background: var(--champagne); color: #fff; }
 .to-top { position: fixed; z-index: 8; right: max(18px,calc((100vw - 430px)/2 + 16px)); bottom: 22px; display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(55,52,49,.75); color: #fff; font-size: 20px; cursor: pointer; }
