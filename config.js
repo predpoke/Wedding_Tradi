@@ -6,6 +6,7 @@ window.WEDDING_CONFIG = {
   bgmTitle: "Wedding 01",
   bgmArtist: "Francisco Alvear",
   bgmLicenseUrl: "https://mixkit.co/license/#musicFree",
+  rsvpEndpoint: "https://formsubmit.co/ajax/spsychic@naver.com",
   groomName: "최승호",
   brideName: "이샘",
   groomShortName: "최승호",

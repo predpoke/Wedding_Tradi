@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260811-6" />
+  <link rel="stylesheet" href="styles.css?v=20260930-1" />
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js"></script>
-  <script src="config.js?v=20260811-6"></script>
-  <script src="script.js?v=20260811-6" defer></script>
+  <script src="config.js?v=20260930-1"></script>
+  <script src="script.js?v=20260930-1" defer></script>
 </head>
 <body>
   <main class="invitation-shell">
@@ -165,14 +165,15 @@
     <form id="rsvp-form">
       <button id="rsvp-close" class="form-modal__close" type="button" aria-label="참석 여부 창 닫기">×</button>
       <h2>참석 여부 전달</h2>
-      <p>작성 후 공유 앱을 선택해 신랑·신부에게 전달해 주세요.</p>
+      <p>작성한 참석 여부는 신랑·신부에게 바로 전달됩니다.</p>
+      <p id="rsvp-status" class="rsvp-status" hidden></p>
       <label><span>성함</span><input name="guestName" maxlength="20" required /></label>
       <fieldset><legend>구분</legend><label><input type="radio" name="side" value="신랑측" required /> 신랑측</label><label><input type="radio" name="side" value="신부측" required /> 신부측</label></fieldset>
       <fieldset><legend>참석 여부</legend><label><input type="radio" name="attendance" value="참석" required /> 참석</label><label><input type="radio" name="attendance" value="불참" required /> 불참</label></fieldset>
       <label><span>참석 인원</span><select name="guests"><option>1명</option><option>2명</option><option>3명</option><option>4명 이상</option></select></label>
       <label><span>예식</span><select name="session"><option>1부 오후 5시</option><option>2부 오후 7시</option><option>미정</option></select></label>
       <label><span>전하실 말씀</span><textarea name="note" maxlength="100" rows="3"></textarea></label>
-      <button class="primary-button" type="submit">응답 내용 공유하기</button>
+      <button class="primary-button" type="submit">참석 여부 보내기</button>
     </form>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

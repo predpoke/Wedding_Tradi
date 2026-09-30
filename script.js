@@ -173,18 +173,62 @@ const setupReveals = () => {
 };
 
 const setupRsvp = () => {
+  const key = "wedding-tradi-rsvp";
   const modal = document.getElementById("rsvp-modal");
   const form = document.getElementById("rsvp-form");
-  document.getElementById("rsvp-open").addEventListener("click", () => modal.showModal());
+  const status = document.getElementById("rsvp-status");
+  const submitButton = form.querySelector('button[type="submit"]');
+  const updateStatus = () => {
+    if (!status) return;
+    status.hidden = !localStorage.getItem(key);
+    status.textContent = "이 기기에서 이미 참석 여부를 보냈습니다. 다시 보내면 새 응답으로 전달됩니다.";
+  };
+  updateStatus();
+  document.getElementById("rsvp-open").addEventListener("click", () => {
+    updateStatus();
+    modal.showModal();
+  });
   document.getElementById("rsvp-close").addEventListener("click", () => modal.close());
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = new FormData(form);
-    const response = [`[최승호 · 이샘 결혼식 참석 여부]`, `성함: ${data.get("guestName")}`, `구분: ${data.get("side")}`, `참석 여부: ${data.get("attendance")}`, `참석 인원: ${data.get("guests")}`, `예식: ${data.get("session")}`, data.get("note") ? `전하실 말씀: ${data.get("note")}` : ""].filter(Boolean).join("\n");
-    modal.close();
-    await copyText(response, "참석 응답을 복사했습니다. 신랑·신부에게 전달해 주세요.");
-    if (navigator.share) {
-      await navigator.share({ title: "결혼식 참석 여부", text: response }).catch(() => {});
+    const payload = {
+      _subject: `[청첩장 참석 여부] ${data.get("guestName")} - ${data.get("attendance")}`,
+      _template: "table",
+      _captcha: "false",
+      "성함": data.get("guestName"),
+      "구분": data.get("side"),
+      "참석 여부": data.get("attendance"),
+      "참석 인원": data.get("guests"),
+      "예식": data.get("session"),
+      "전하실 말씀": data.get("note") || "-",
+      "제출 시각": new Intl.DateTimeFormat("ko-KR", { dateStyle: "full", timeStyle: "short" }).format(new Date()),
+      "초대장": location.href
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = "보내는 중...";
+    try {
+      const result = await fetch(config.rsvpEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!result.ok) throw new Error("RSVP submit failed");
+      localStorage.setItem(key, JSON.stringify(payload));
+      updateStatus();
+      form.reset();
+      modal.close();
+      showToast("참석 여부를 보냈습니다.");
+    } catch {
+      const response = Object.entries(payload)
+        .filter(([name]) => !name.startsWith("_"))
+        .map(([name, value]) => `${name}: ${value}`)
+        .join("\n");
+      await copyText(response, "전송이 막혀 응답 내용을 복사했습니다. 신랑·신부에게 전달해 주세요.");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "참석 여부 보내기";
     }
   });
 };
